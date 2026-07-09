@@ -1,6 +1,6 @@
 {
-  "name": "ครูป๊อป - ผู้ช่วยจัดการครู",
-  "short_name": "ครูป๊อป",
+  "name": "KruOAT - ผู้ช่วยจัดการครู",
+  "short_name": "KruOAT",
   "description": "แอพผู้ช่วยจัดการตารางสอน งาน และนัดหมายสำหรับครู",
   "start_url": "./index.html",
   "scope": "./",
