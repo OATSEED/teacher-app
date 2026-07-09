@@ -1,6 +1,6 @@
-const CACHE_NAME = 'teacher-app-popart-v3';
+const CACHE_NAME = 'teacher-app-popart-v4';
 const ASSETS = [
-  './teacher_app_popart.html',
+  './index.html',
   './manifest.json',
   './icon-192.png',
   './icon-512.png'
@@ -29,17 +29,19 @@ self.addEventListener('activate', function(event){
 
 self.addEventListener('fetch', function(event){
   event.respondWith(
-    caches.match(event.request).then(function(cached){
-      if(cached) return cached;
-      return fetch(event.request).then(function(response){
+    fetch(event.request).then(function(response){
+      // only cache real, successful responses — never cache 404s / errors,
+      // so a transient failure (e.g. a build still in progress) can't get stuck forever
+      if(response && response.ok){
         try{
           var copy = response.clone();
           caches.open(CACHE_NAME).then(function(cache){ cache.put(event.request, copy); });
         }catch(e){}
-        return response;
-      }).catch(function(){
-        return cached;
-      });
+      }
+      return response;
+    }).catch(function(){
+      // offline: fall back to whatever we do have cached
+      return caches.match(event.request);
     })
   );
 });
