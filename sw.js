@@ -1,17 +1,9 @@
-const CACHE_NAME = 'teacher-app-popart-v4';
-const ASSETS = [
-  './index.html',
-  './manifest.json',
-  './icon-192.png',
-  './icon-512.png'
-];
+const CACHE_NAME = 'teacher-app-popart-v5';
 
 self.addEventListener('install', function(event){
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache){
-      return cache.addAll(ASSETS);
-    })
-  );
+  // no pre-caching here on purpose — a single failed fetch during install
+  // (e.g. a slow network) can silently block the whole worker from ever activating.
+  // caching happens opportunistically in the fetch handler below instead.
   self.skipWaiting();
 });
 
