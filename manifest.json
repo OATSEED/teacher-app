@@ -2,7 +2,7 @@
   "name": "ครูโอ๊ต - ผู้ช่วยจัดการครู",
   "short_name": "ครูโอ๊ต",
   "description": "แอพผู้ช่วยจัดการตารางสอน งาน และนัดหมายสำหรับครู",
-  "start_url": "./teacher_app_popart.html",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
