@@ -1,6 +1,6 @@
 {
-  "name": "ครูโอ๊ต - ผู้จัดการส่วนตัว",
-  "short_name": "ครูโอ๊ต",
+  "name": "TeacGo - ผู้จัดการส่วนตัวครู",
+  "short_name": "TeacGo",
   "description": "แอพผู้ช่วยจัดการตารางสอน งาน และนัดหมายสำหรับครู",
   "start_url": "./index.html",
   "scope": "./",
